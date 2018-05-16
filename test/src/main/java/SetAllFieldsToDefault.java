@@ -9,6 +9,8 @@ import java.util.List;
 
 public class SetAllFieldsToDefault extends AbstractWebTest {
 
+    //TODO: Сделать чтобы прокликивал только красные и желтые статусы
+
     @BeforeClass
     public static void setUp() throws InterruptedException {
         AbstractWebTest.setUp();
