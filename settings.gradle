@@ -1,0 +1,3 @@
+rootProject.name = 'statServerTest'
+include 'test'
+
