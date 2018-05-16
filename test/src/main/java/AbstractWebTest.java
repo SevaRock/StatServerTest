@@ -1,3 +1,4 @@
+import org.apache.commons.logging.Log;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -122,9 +123,7 @@ public class AbstractWebTest {
                         (By.cssSelector(
                                 ("body > roc-root > div > infotecs-infotecs-devices > div.devices > div.child_container > infotecs-events > div > div.device_details_header > div.error_panel.device_details_header_reset_status > button")));
                 setDefaultStatusButton.click();
-            } catch (NoSuchElementException e) {
-                e.printStackTrace();
-            }
+            } catch (NoSuchElementException ignored) { }
         }
     }
 
@@ -156,9 +155,7 @@ public class AbstractWebTest {
                         (By.cssSelector(
                                 ("body > roc-root > div > infotecs-infotecs-devices > div.devices > div.child_container > infotecs-events > div > div.device_details_header > div.error_panel.device_details_header_reset_status > button")));
                 setDefaultStatusButton.click();
-            } catch (NoSuchElementException e) {
-                e.printStackTrace();
-            }
+            } catch (NoSuchElementException ignored) { }
         }
     }
 
@@ -190,9 +187,7 @@ public class AbstractWebTest {
                                 ("body > roc-root > div > infotecs-infotecs-devices > div.devices > div.child_container > infotecs-events > div > div.device_details_header > div.error_panel.device_details_header_reset_status > button")));
 
                 setDefaultStatusButton.click();
-            } catch (NoSuchElementException e) {
-                e.printStackTrace();
-            }
+            } catch (NoSuchElementException ignored) { }
         }
     }
 
