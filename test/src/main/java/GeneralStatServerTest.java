@@ -9,19 +9,16 @@ public class GeneralStatServerTest extends AbstractWebTest {
         AbstractWebTest.setUp();
     }
 
-    @Ignore
     @Test
     public void checkMainWidnowFields() throws IOException {
         mainWindowTest();
     }
 
-    @Ignore
     @Test
     public void checkTextSearchInSpecificNetwork() throws IOException {
         specificTextSearch();
     }
 
-    @Ignore
     @Test
     public void checkNetworkFieldsIndication() throws IOException {
         checkNetworkSelection();

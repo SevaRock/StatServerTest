@@ -16,17 +16,17 @@ public class SetAllFieldsToDefault extends AbstractWebTest {
 
     @Test
     public void setDefaultConditionOnNetworkOne() throws InterruptedException {
-            setStatsToDefaultOnNetworkOne();
+            setStatsToDefaultOnSpecificNetwork(Constants.NETWORK_1_SELECTOR);
     }
 
     @Test
     public void setDefaultConditionOnNetwork4321() throws InterruptedException {
-            setStatsToDefaultOnNetworkTwo();
+            setStatsToDefaultOnSpecificNetwork(Constants.NETWORK_4321_SELECTOR);
     }
 
     @Test
     public void setDefaultConditionOnNetwork9998() throws InterruptedException {
-            setStatsToDefaultOnNetwork9998();
+            setStatsToDefaultOnSpecificNetwork(Constants.NETWORK_9998_SELECTOR);
     }
 
     @AfterClass

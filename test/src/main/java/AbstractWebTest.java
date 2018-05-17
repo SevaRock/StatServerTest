@@ -96,14 +96,20 @@ public class AbstractWebTest {
         takeScreenshot(chromeDriver, "Network9998.png");
     }
 
-    public void setStatsToDefaultOnNetworkOne() throws InterruptedException {
+    public void setStatsToDefaultOnSpecificNetwork(String networkFieldSelector) throws InterruptedException {
 
-        WebElement network1Field = chromeDriver.findElement
-                (By.cssSelector(Constants.NETWORK_1_SELECTOR));
+        WebElement networkField = chromeDriver.findElement
+                (By.cssSelector(networkFieldSelector));
 
-        network1Field.click();
+        networkField.click();
 
         Thread.sleep(1000);
+
+        findRedAndYellowSeverityAndClickDeleteStatusButton();
+
+    }
+
+    public void findRedAndYellowSeverityAndClickDeleteStatusButton() {
 
         List<WebElement> redRows = chromeDriver.findElements(By.cssSelector(
                 ("span.severity.red")));
@@ -113,7 +119,7 @@ public class AbstractWebTest {
 
         int rowCount = redRows.size() + yellowRows.size() + 2;
 
-        for (int i=2; i < rowCount; i++) {
+        for (int i = 2; i < rowCount; i++) {
 
             WebElement element = chromeDriver.findElement
                     (By.cssSelector
@@ -125,76 +131,6 @@ public class AbstractWebTest {
                 WebElement setDefaultStatusButton = chromeDriver.findElement
                         (By.cssSelector(
                                 ("body > roc-root > div > infotecs-infotecs-devices > div.devices > div.child_container > infotecs-events > div > div.device_details_header > div.error_panel.device_details_header_reset_status > button")));
-                setDefaultStatusButton.click();
-            } catch (NoSuchElementException ignored) { }
-        }
-    }
-
-    public void setStatsToDefaultOnNetworkTwo() throws InterruptedException {
-
-        WebElement network1Field = chromeDriver.findElement
-                (By.cssSelector(Constants.NETWORK_4321_SELECTOR));
-
-        network1Field.click();
-
-        Thread.sleep(1000);
-
-        List<WebElement> redRows = chromeDriver.findElements(By.cssSelector(
-                ("span.severity.red")));
-
-        List<WebElement> yellowRows = chromeDriver.findElements(By.cssSelector(
-                ("span.severity.yellow")));
-
-        int rowCount = redRows.size() + yellowRows.size() + 2;
-
-        for (int i=2; i < rowCount; i++) {
-
-            WebElement findElementOnList = chromeDriver.findElement
-                    (By.cssSelector
-                            ("body > roc-root > div > infotecs-infotecs-devices > div.devices > div.devices_list > infotecs-devices-list > div.devices-list.table > table > tbody > tr:nth-child(" + i + ")"));
-
-            findElementOnList.click();
-
-            try {
-
-                WebElement setDefaultStatusButton = chromeDriver.findElement
-                        (By.cssSelector(
-                                ("body > roc-root > div > infotecs-infotecs-devices > div.devices > div.child_container > infotecs-events > div > div.device_details_header > div.error_panel.device_details_header_reset_status > button")));
-                setDefaultStatusButton.click();
-            } catch (NoSuchElementException ignored) { }
-        }
-    }
-
-    public void setStatsToDefaultOnNetwork9998() throws InterruptedException {
-
-        WebElement network1Field = chromeDriver.findElement
-                (By.cssSelector(Constants.NETWORK_9998_SELECTOR));
-
-        network1Field.click();
-
-        Thread.sleep(1000);
-
-        List<WebElement> redRows = chromeDriver.findElements(By.cssSelector(
-                ("span.severity.red")));
-
-        List<WebElement> yellowRows = chromeDriver.findElements(By.cssSelector(
-                ("span.severity.yellow")));
-
-        int rowCount = redRows.size() + yellowRows.size() + 2;
-
-        for (int i=2; i < rowCount; i++) {
-
-            WebElement findElementOnList = chromeDriver.findElement
-                    (By.cssSelector
-                            ("body > roc-root > div > infotecs-infotecs-devices > div.devices > div.devices_list > infotecs-devices-list > div.devices-list.table > table > tbody > tr:nth-child(" + i + ")"));
-
-            findElementOnList.click();
-
-            try {
-                WebElement setDefaultStatusButton = chromeDriver.findElement
-                        (By.cssSelector(
-                                ("body > roc-root > div > infotecs-infotecs-devices > div.devices > div.child_container > infotecs-events > div > div.device_details_header > div.error_panel.device_details_header_reset_status > button")));
-
                 setDefaultStatusButton.click();
             } catch (NoSuchElementException ignored) { }
         }
