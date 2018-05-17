@@ -105,10 +105,13 @@ public class AbstractWebTest {
 
         Thread.sleep(1000);
 
-        List<WebElement> rows = chromeDriver.findElements(By.cssSelector(
-                ("td.col-2")));
+        List<WebElement> redRows = chromeDriver.findElements(By.cssSelector(
+                ("span.severity.red")));
 
-        int rowCount = rows.size();
+        List<WebElement> yellowRows = chromeDriver.findElements(By.cssSelector(
+                ("span.severity.yellow")));
+
+        int rowCount = redRows.size() + yellowRows.size() + 2;
 
         for (int i=2; i < rowCount; i++) {
 
@@ -136,10 +139,13 @@ public class AbstractWebTest {
 
         Thread.sleep(1000);
 
-        List<WebElement> rows = chromeDriver.findElements(By.cssSelector(
-                ("td.col-1")));
+        List<WebElement> redRows = chromeDriver.findElements(By.cssSelector(
+                ("span.severity.red")));
 
-        int rowCount = rows.size();
+        List<WebElement> yellowRows = chromeDriver.findElements(By.cssSelector(
+                ("span.severity.yellow")));
+
+        int rowCount = redRows.size() + yellowRows.size() + 2;
 
         for (int i=2; i < rowCount; i++) {
 
@@ -168,10 +174,13 @@ public class AbstractWebTest {
 
         Thread.sleep(1000);
 
-        List<WebElement> rows = chromeDriver.findElements(By.cssSelector(
-                ("td.col-3")));
+        List<WebElement> redRows = chromeDriver.findElements(By.cssSelector(
+                ("span.severity.red")));
 
-        int rowCount = rows.size();
+        List<WebElement> yellowRows = chromeDriver.findElements(By.cssSelector(
+                ("span.severity.yellow")));
+
+        int rowCount = redRows.size() + yellowRows.size() + 2;
 
         for (int i=2; i < rowCount; i++) {
 
